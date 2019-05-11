@@ -12,32 +12,29 @@
 
 #include "../includes/wolf.h"
 #include <libc.h>
-
-static void pp(t_window *win, int x, int y, int c)
+/*
+static void pp(t_game *game, int x, int y, int c)
 {
-    *(int*)(win->img_adr + sizeof(int) * (x + y * W_WIDTH)) = c;
+    int i = 32;
+    game->img_adr = mlx_get_data_addr(game->img, &i,&i,&i);
+    //printf("pp\nmlx:    %p\nwin:    %p\nimg    %p\nimgadr %p\n", game->mlx, game->win, game->img, game->img_adr);
+    *(int*)(game->img_adr + sizeof(int) * (x + y * W_WIDTH)) = c;
 }
-
+*/
 int		main(int ac, char **av)
 {
 	t_game	game;
 
 	if (ac != 2)
 		die(INVALID_PARAMS);
-	if (!create_window(&game.win))
+	if (!create_window(&game))
 		die(MLX_FAILED);
 	get_map(&game, av[1]);
+   // printf("main\nmlx:    %p\nwin:    %p\nimg    %p\nimgadr %p\n", game.mlx, game.win, game.img, game.img_adr);
     init_player(&game);
-    //draw_game(&game);
-    int i = -1;
-    int j;
-    while (++i < W_HEIGHT && (j = -1))
-        while (++j < W_WIDTH)
-            pp(&game.win, j, i, i * (j * i));
-            //mlx_pixel_put(game.win.mlx, game.win.win, j, i, i * (j * i));
-    mlx_put_image_to_window(game.win.mlx,game.win.win, game.win.img, 0, 0);
-	mlx_hook(game.win.win, 2, 1L << 0, game_keyboard , &game);
-	mlx_hook(game.win.win, 17, 1L << 17, game_exit, &game);
-	mlx_loop(game.win.mlx);
+    draw_game(&game);
+	mlx_hook(game.win, 2, 1L << 0, game_keyboard , &game);
+	mlx_hook(game.win, 17, 1L << 17, game_exit, &game);
+	mlx_loop(game.mlx);
 	return (0);
 }

@@ -65,18 +65,9 @@ typedef enum	e_c_tiles
     C_FRAGILE_1 = 0xa0a,
     C_FRAGILE_2 = 0xa0a0a,
     C_FRAGILE_3 = 0xa0,
-    C_MAP_EDGE = 0xcc99cc,
+    C_MAP_EDGE = 0x2cb288,
     C_DOORWAY = 0x235476
 }				t_c_tiles;
-
-typedef struct	s_window
-{
-	void		*mlx;
-	void		*win;
-	void		*img;
-	char		*img_adr;
-}				t_window;
-
 
 typedef struct	s_dda
 {
@@ -115,7 +106,10 @@ typedef struct	s_info
 typedef struct	s_game
 {
 	t_player	player;
-	t_window	win;
+    void		*mlx;
+    void		*win;
+    void		*img;
+    char		*img_adr;
 	t_info		info;
 	//int		textures[64][64][64];
 }				t_game;
@@ -124,7 +118,7 @@ void			die(int reason);
 void			warn(int reason);
 
 int				get_map(t_game *game, char *name);
-int				create_window(t_window	*window);
+int				create_window(t_game *window);
 void            init_player(t_game *game);
 void            draw_vertical_line(t_game *game, int x, double d, int tile_val);
 void            draw_game(t_game *game);

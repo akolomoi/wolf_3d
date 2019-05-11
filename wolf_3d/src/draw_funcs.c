@@ -15,9 +15,11 @@
 
 static void put_pixel(t_game *game, int x, int y, int c)
 {
-    printf("x = %d, y = %d, c = %lu\n", x, y, sizeof(int));
-    *(int*)(game->win.img_adr + sizeof(int) * (x + y * W_WIDTH)) = c;
-    printf("segf\n");
+    int tmp;
+
+    tmp = 32;
+    game->img_adr = mlx_get_data_addr(game->img, &tmp, &tmp, &tmp);
+    *(int*)(game->img_adr + sizeof(int) * (x + y * W_WIDTH)) = c;
 }
 
 static int  get_col(int tile_value)

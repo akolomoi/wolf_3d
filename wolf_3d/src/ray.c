@@ -48,11 +48,10 @@ void    draw_game(t_game *game)
             if ((tile_val = game->info.map[try_x][try_y]) && tile_val != PLAYER)
             {
                 draw_vertical_line(game, i, distance * cos(ray), tile_val);
-                printf("segf\n");
                 break ;
             }
         }
     }
-    mlx_put_image_to_window(game->win.mlx, game->win.win,game->win.img, 0, 0);
-    ft_bzero(game->win.img_adr, sizeof(int) * W_HEIGHT * W_WIDTH);
+    mlx_put_image_to_window(game->mlx, game->win,game->img, 0, 0);
+    ft_bzero(game->img_adr, sizeof(int) * W_HEIGHT * W_WIDTH);
 }
