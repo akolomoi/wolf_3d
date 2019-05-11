@@ -13,6 +13,14 @@
 #include "../includes/wolf.h"
 #include <libc.h>
 
+void    init_player(t_game *game)
+{
+    game->player.pos_x =game->player.spawn_x;
+    game->player.pos_y =game->player.spawn_y;
+    game->player.fov = M_PI / 3;
+    game->player.dir = 0.0;
+}
+
 void	die(int reason)
 {
 	ft_putendl("Usage: ./wolf3d [map]");

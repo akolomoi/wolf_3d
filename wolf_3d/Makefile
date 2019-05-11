@@ -1,6 +1,8 @@
 NAME = wolf3d
 
 SRCNAME =	create_window.c \
+			ray.c \
+			draw_funcs.c \
 			events.c \
 			map.c \
 			errors.c \

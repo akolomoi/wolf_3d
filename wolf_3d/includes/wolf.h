@@ -26,6 +26,8 @@
 
 # define MAP_SIZE	10	//256
 
+//TODO: cleanup
+
 typedef enum	e_errors
 {
 	MLX_FAILED = 1,
@@ -53,6 +55,19 @@ typedef enum	e_tiles
 	PLAYER,
 	T_TOTAL
 }				t_tiles;
+
+typedef enum	e_c_tiles
+{
+    C_EMPTY,
+    C_SOLID_1 = 0xff,
+    C_SOLID_2 = 0xff00,
+    C_SOLID_3 = 0xff0000,
+    C_FRAGILE_1 = 0xa0a,
+    C_FRAGILE_2 = 0xa0a0a,
+    C_FRAGILE_3 = 0xa0,
+    C_MAP_EDGE = 0xcc99cc,
+    C_DOORWAY = 0x235476
+}				t_c_tiles;
 
 typedef struct	s_window
 {
@@ -83,6 +98,7 @@ typedef struct	s_player
 	double		pos_y;
 	double		dir_x;
 	double		dir_y;
+    double		dir;
 	double		fov;
 	double		plane_x;
 	double		plane_y;
@@ -109,6 +125,9 @@ void			warn(int reason);
 
 int				get_map(t_game *game, char *name);
 int				create_window(t_window	*window);
+void            init_player(t_game *game);
+void            draw_vertical_line(t_game *game, int x, double d, int tile_val);
+void            draw_game(t_game *game);
 void			start_game(t_game *game);
 
 int				game_keyboard(int k, t_game *game);

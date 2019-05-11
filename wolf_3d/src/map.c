@@ -74,6 +74,8 @@ static int	set_spawn(t_game *game, int i, int j)
 		while (++j < MAP_SIZE)
 			if (game->info.map[i][j] == 0)
 			{
+                game->player.spawn_x = j;
+                game->player.spawn_y = i;
 				game->info.map[i][j] = PLAYER;
 				return (0);
 			}

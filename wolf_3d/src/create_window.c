@@ -24,6 +24,7 @@ int		create_window(t_window	*window)
 {
 	int		tmp;
 
+
 	tmp = 32;
 	if (!(window->mlx = mlx_init()) ||
 	!(window->win = mlx_new_window(window->mlx, W_WIDTH, W_HEIGHT,
