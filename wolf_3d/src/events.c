@@ -18,21 +18,50 @@ int		game_keyboard(int k, t_game *game)
 {
 	if (k == KEY_ESC)
 		game_exit(game);
-	if (k == KEY_SPACE)
+    else if (k == KEY_LEFT)
+    {
+        game->player.dir -= M_PI / 60;
+    }
+    else if (k == KEY_RIGHT)
+    {
+        game->player.dir += M_PI / 60;
+    }
+    else if (k == KEY_UP)
+    {
+        game->player.pos_x += 0.15 * sin(game->player.dir);
+        game->player.pos_x += 0.15 * cos(game->player.dir);
+        if (game->map[(int)game->player.pos_x][(int)game->player.pos_y] && game->map[(int)game->player.pos_x][(int)game->player.pos_y] != 9)
+        {
+            game->player.pos_x -= 0.15 * sin(game->player.dir);
+            game->player.pos_x -= 0.15 * cos(game->player.dir);
+        }
+    }
+    else if (k == KEY_DOWN)
+    {
+        game->player.pos_x -= 0.15 * sin(game->player.dir);
+        game->player.pos_x -= 0.15 * cos(game->player.dir);
+        if (game->map[(int)game->player.pos_x][(int)game->player.pos_y] && game->map[(int)game->player.pos_x][(int)game->player.pos_y] != 9)
+        {
+            game->player.pos_x += 0.15 * sin(game->player.dir);
+            game->player.pos_x += 0.15 * cos(game->player.dir);
+        }
+    }
+	else if (k == KEY_SPACE)
 	{
 		int i = 0;printf("\nplayer[%d][%d]\n", game->player.spawn_x, game->player.spawn_y);
-		game->info.map[game->player.spawn_x][game->player.spawn_y] = 9;
+		game->map[game->player.spawn_x][game->player.spawn_y] = 9;
 		while (i < MAP_SIZE)
 		{
 			
 			printf("\n");
 			int j = 0;
 			while (j < MAP_SIZE)
-				{printf("%d ", game->info.map[i][j]); j++;}
+				{printf("%d ", game->map[i][j]); j++;}
 			i++;
 		}
 	printf("\n");
 	}
+	draw_game(game);
 	return (1);
 }
 

@@ -16,7 +16,7 @@
 void    draw_game(t_game *game)
 {
     // !must be smaller then player's speed
-    double step = 0.1;
+    double step = 0.01;
     //from 0 to W_WIDTH: trace distances
 
     //angle step
@@ -39,13 +39,13 @@ void    draw_game(t_game *game)
         double unit_y = ray * cos(ray);
         int hit = 0;
         //TODO: out_of_bounds
-        while (!hit && distance < MAP_SIZE - 2)
+        while (!hit && distance < 50)
         {
             distance += step;
 
             int try_x = (int)(game->player.pos_x + unit_x * distance);
             int try_y = (int)(game->player.pos_y + unit_y * distance);
-            if ((tile_val = game->info.map[try_x][try_y]) && tile_val != PLAYER)
+            if ((tile_val = game->map[try_x][try_y]) && tile_val != PLAYER)
             {
                 draw_vertical_line(game, i, distance * cos(ray), tile_val);
                 break ;

@@ -15,10 +15,10 @@
 
 void    init_player(t_game *game)
 {
-    game->player.pos_x = game->player.spawn_x;
-    game->player.pos_y = game->player.spawn_y;
+    game->player.pos_x = game->player.spawn_x - 0.5;
+    game->player.pos_y = game->player.spawn_y - 0.5;
     game->player.fov = M_PI / 3;
-    game->player.dir = 0.0;
+    game->player.dir = 2;
 }
 
 void	die(int reason)

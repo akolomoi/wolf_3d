@@ -110,7 +110,7 @@ typedef struct	s_game
     void		*win;
     void		*img;
     char		*img_adr;
-	t_info		info;
+    int         map[MAP_SIZE][MAP_SIZE];
 	//int		textures[64][64][64];
 }				t_game;
 
