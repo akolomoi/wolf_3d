@@ -76,7 +76,6 @@ static int	set_spawn(t_game *game, int i, int j)
 			{
                 game->player.spawn_x = j;
                 game->player.spawn_y = i;
-				game->map[i][j] = PLAYER;
 				return (0);
 			}
 	return (1);

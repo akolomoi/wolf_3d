@@ -24,7 +24,7 @@
 # define W_WIDTH	800
 # define W_HEIGHT	600
 
-# define MAP_SIZE	10	//256
+# define MAP_SIZE	20	//256
 
 //TODO: cleanup
 
@@ -89,19 +89,19 @@ typedef struct	s_player
 	double		pos_y;
 	double		dir_x;
 	double		dir_y;
-    double		dir;
-	double		fov;
 	double		plane_x;
 	double		plane_y;
+	double      camera;
 }				t_player;
 
-typedef struct	s_info
+typedef struct  s_keys
 {
-	int			map[MAP_SIZE][MAP_SIZE];
-	int			is_running;
-	double		time_old;
-	double		time;
-}				t_info;
+    int         move_forwards;
+    int         move_backwards;
+    int         rotate_left;
+    int         rotate_right;
+    int         sprint;
+}               t_keys;
 
 typedef struct	s_game
 {
@@ -122,6 +122,7 @@ int				create_window(t_game *window);
 void            init_player(t_game *game);
 void            draw_vertical_line(t_game *game, int x, double d, int tile_val);
 void            draw_game(t_game *game);
+void              draw_vl(t_game *game, int x, int start, int end, int tile_val);
 void			start_game(t_game *game);
 
 int				game_keyboard(int k, t_game *game);

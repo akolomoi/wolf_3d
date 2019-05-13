@@ -45,22 +45,37 @@ static int  get_col(int tile_value)
 }
 
 void        draw_vertical_line(t_game *game, int x, double d, int tile_val)
+    {
+        int     start;
+        int     end;
+        int     l_height;
+
+        //! d *= cos(ang);
+        l_height = (int)(W_HEIGHT / d);
+        start = -l_height / 2 + W_HEIGHT / 2;
+        end = l_height / 2 + W_HEIGHT/ 2;
+        if (start < 0)
+            start = 0;
+        if (end >= W_HEIGHT)
+            end = W_HEIGHT - 1;
+
+        int c = get_col(tile_val);
+
+        int i = -1;
+        while (++i < W_HEIGHT)
+        {
+            if (i < start)
+                continue ;
+            if (i > end)
+                continue ;
+            else
+                put_pixel(game, x, i, c);
+        }
+}
+
+void        draw_vl(t_game *game, int x, int start, int end, int tile_val)
 {
-    int     start;
-    int     end;
-    int     l_height;
-
-   //! d *= cos(ang);
-    l_height = (int)(W_HEIGHT / d);
-    start = -l_height / 2 + W_HEIGHT / 2;
-    end = l_height / 2 + W_HEIGHT/ 2;
-    if (start < 0)
-        start = 0;
-    if (end >= W_HEIGHT)
-        end = W_HEIGHT - 1;
-
     int c = get_col(tile_val);
-
     int i = -1;
     while (++i < W_HEIGHT)
     {
@@ -72,4 +87,3 @@ void        draw_vertical_line(t_game *game, int x, double d, int tile_val)
             put_pixel(game, x, i, c);
     }
 }
-

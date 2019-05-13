@@ -14,36 +14,50 @@
 #include "../includes/keys.h"
 #include <libc.h>
 
+//https://github.com/GlThibault/Wolf3D
+
 int		game_keyboard(int k, t_game *game)
 {
 	if (k == KEY_ESC)
 		game_exit(game);
     else if (k == KEY_LEFT)
     {
-        game->player.dir -= M_PI / 60;
+        double x_olddir, x_oldplane;
+        x_olddir = game->player.dir_x;
+        game->player.dir_x = game->player.dir_x * cos(0.05) - game->player.dir_y * sin(0.05);
+        game->player.dir_y = x_olddir * sin(0.05) + game->player.dir_y * cos(0.05);
+        x_oldplane = game->player.plane_x;
+        game->player.plane_x = game->player.plane_x * cos(0.05) - game->player.plane_y * sin(0.05);
+        game->player.plane_y = x_oldplane * sin(0.05) + game->player.plane_y * cos(0.05);
     }
     else if (k == KEY_RIGHT)
     {
-        game->player.dir += M_PI / 60;
+        double x_olddir, x_oldplane;
+        x_olddir = game->player.dir_x;
+        game->player.dir_x = game->player.dir_x * cos(-0.05) - game->player.dir_y * sin(-0.05);
+        game->player.dir_y = x_olddir * sin(-0.05) + game->player.dir_y * cos(-0.05);
+        x_oldplane = game->player.plane_x;
+        game->player.plane_x = game->player.plane_x * cos(-0.05) - game->player.plane_y * sin(-0.05);
+        game->player.plane_y = x_oldplane * sin(-0.05) + game->player.plane_y * cos(-0.05);
     }
     else if (k == KEY_UP)
     {
-        game->player.pos_x += 0.15 * sin(game->player.dir);
-        game->player.pos_x += 0.15 * cos(game->player.dir);
-        if (game->map[(int)game->player.pos_x][(int)game->player.pos_y] && game->map[(int)game->player.pos_x][(int)game->player.pos_y] != 9)
+        game->player.pos_x += game->player.dir_x * 0.1;
+        game->player.pos_y += game->player.dir_y * 0.1;
+        if (game->map[(int) game->player.pos_x][(int) game->player.pos_y])
         {
-            game->player.pos_x -= 0.15 * sin(game->player.dir);
-            game->player.pos_x -= 0.15 * cos(game->player.dir);
+            game->player.pos_x -= game->player.dir_x * 0.1;
+            game->player.pos_y -= game->player.dir_y * 0.1;
         }
     }
     else if (k == KEY_DOWN)
     {
-        game->player.pos_x -= 0.15 * sin(game->player.dir);
-        game->player.pos_x -= 0.15 * cos(game->player.dir);
-        if (game->map[(int)game->player.pos_x][(int)game->player.pos_y] && game->map[(int)game->player.pos_x][(int)game->player.pos_y] != 9)
+        game->player.pos_x -= game->player.dir_x * 0.1;
+        game->player.pos_y -= game->player.dir_y * 0.1;
+        if (game->map[(int) game->player.pos_x][(int) game->player.pos_y])
         {
-            game->player.pos_x += 0.15 * sin(game->player.dir);
-            game->player.pos_x += 0.15 * cos(game->player.dir);
+            game->player.pos_x += game->player.dir_x * 0.1;
+            game->player.pos_y += game->player.dir_y * 0.1;
         }
     }
 	else if (k == KEY_SPACE)
