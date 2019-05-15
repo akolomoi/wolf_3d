@@ -33,8 +33,10 @@ int		main(int ac, char **av)
    // printf("main\nmlx:    %p\nwin:    %p\nimg    %p\nimgadr %p\n", game.mlx, game.win, game.img, game.img_adr);
     init_player(&game);
     draw_game(&game);
-	mlx_hook(game.win, 2, 1L << 0, game_keyboard , &game);
+	mlx_hook(game.win, 2, 1L << 0, key_press, &game);
+    mlx_hook(game.win, 3, 1L << 1, key_release, &game);
 	mlx_hook(game.win, 17, 1L << 17, game_exit, &game);
+	mlx_loop_hook(game.mlx, hook, &game);
 	mlx_loop(game.mlx);
 	return (0);
 }

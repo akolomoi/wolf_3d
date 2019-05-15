@@ -24,7 +24,7 @@
 # define W_WIDTH	800
 # define W_HEIGHT	600
 
-# define MAP_SIZE	20	//256
+# define MAP_SIZE	256	//256
 
 //TODO: cleanup
 
@@ -106,6 +106,7 @@ typedef struct  s_keys
 typedef struct	s_game
 {
 	t_player	player;
+	t_keys      status;
     void		*mlx;
     void		*win;
     void		*img;
@@ -124,6 +125,10 @@ void            draw_vertical_line(t_game *game, int x, double d, int tile_val);
 void            draw_game(t_game *game);
 void              draw_vl(t_game *game, int x, int start, int end, int tile_val);
 void			start_game(t_game *game);
+
+int     hook(t_game *game);
+int     key_release(int k, t_game *game);
+int     key_press(int k, t_game *game);
 
 int				game_keyboard(int k, t_game *game);
 int				game_exit(t_game *param);

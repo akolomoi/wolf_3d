@@ -17,8 +17,6 @@ void    init_player(t_game *game)
 {
     game->player.pos_x = game->player.spawn_x + 0.5;
     game->player.pos_y = game->player.spawn_y + 0.5;
-    game->player.fov = M_PI / 3;
-    game->player.dir = 0;
     game->player.dir_x = -1;
     game->player.dir_y = 0;
     game->player.plane_x = 0;

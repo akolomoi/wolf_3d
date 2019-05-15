@@ -98,9 +98,9 @@ void    draw_game(t_game *game)
             end = W_HEIGHT - 1;
 
         if (side)
-            color = 0xa781ef;
+            color = (int) (0xa781ef);
         else
-            color = 0x8faee0;
+            color = (int) (0x8faee0);
 
         //!verline
 
