@@ -163,6 +163,10 @@ int     hook(t_game *game)
     return (0);
 }
 
+//mouse
+
+//mouse
+
 int		game_exit(t_game *param)
 {
 	param = (t_game*)param;

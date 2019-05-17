@@ -13,10 +13,45 @@
 #include "../includes/wolf.h"
 #include <libc.h>
 
+static int fade(int color, double dist)
+{
+    uint8_t     r;
+    uint8_t     g;
+    uint8_t     b;
+    int         k;
+
+    if (dist > 25)
+        dist = 25;
+    b = color >> 16;
+    g = color >> 8;
+    r = color;
+    dist /= 25.0;
+    b -= b * dist;
+    g -= g * dist;
+    r -= r * dist;
+    return ((r << 16) + (g << 8) + b);
+}
+
+static int bad_trip(int color, double dist)
+{
+    int     r;
+    int     g;
+    int     b;
+
+    b = color >> 16;
+    g = color >> 8;
+    r = color;
+    b -= b * dist;
+    g -= g * dist;
+    r -= r * dist;
+    return ((r << 16) + (g << 8) + b);
+}
+
 void    draw_game(t_game *game)
 {
 
     int x = -1;
+    int prev_color = 0;
     while (++x < W_WIDTH)
     {
         double x_cam = (x / (double)W_WIDTH) * 2 - 1;
@@ -86,7 +121,6 @@ void    draw_game(t_game *game)
             walldist = (y_map - y_raypos + (1 - y_step) / 2) / y_raydir;
 
         //
-
         int color;
 
         int lineheight = (int)(W_HEIGHT / walldist);
@@ -98,19 +132,39 @@ void    draw_game(t_game *game)
             end = W_HEIGHT - 1;
 
         if (side)
-            color = (int) (0xa781ef);
+        {
+            if (y_step == -1 )
+                color = 0x4169E1;
+            else
+                color = 0x9100;
+        }
         else
-            color = (int) (0x8faee0);
-
+        {
+            if (x_step == -1)
+                color = 0xFF6347;
+            else
+                color = 0x99cc99;
+        }
         //!verline
-
+//TODO: rgb channels decrementing on distance increasing
         start--;
         int tmp = 32;
         game->img_adr = mlx_get_data_addr(game->img, &tmp, &tmp, &tmp);
         //printf("segf\n");
+        int f = -1;
+        while (++f < start)
+            *(int*)(game->img_adr + sizeof(int) * (x + f * W_WIDTH)) = 0xE0FFFF;
         while (++start < end)
-            *(int*)(game->img_adr + sizeof(int) * (x + start * W_WIDTH)) = color;
+        {
+            if (prev_color == color)
+                *(int *) (game->img_adr + sizeof(int) * (x + start * W_WIDTH)) = fade(color, walldist);
+            else
+                *(int *) (game->img_adr + sizeof(int) * (x + start * W_WIDTH)) = 0;
+        }
+        while (++start < W_HEIGHT)
+            *(int*)(game->img_adr + sizeof(int) * (x + start * W_WIDTH)) = 0xDEB887;
 
+        prev_color = color;
         //!verline
 
     }

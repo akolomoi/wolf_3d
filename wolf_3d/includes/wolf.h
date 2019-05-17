@@ -94,6 +94,12 @@ typedef struct	s_player
 	double      camera;
 }				t_player;
 
+typedef struct  s_mouse
+{
+    int         last_x;
+    int         last_y;
+}               t_mouse;
+
 typedef struct  s_keys
 {
     int         move_forwards;
@@ -107,6 +113,7 @@ typedef struct	s_game
 {
 	t_player	player;
 	t_keys      status;
+	t_mouse     mouse;
     void		*mlx;
     void		*win;
     void		*img;
