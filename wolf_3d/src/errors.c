@@ -21,6 +21,17 @@ void    init_player(t_game *game)
     game->player.dir_y = 0;
     game->player.plane_x = 0;
     game->player.plane_y = 0.66;
+	game->player.mode = M_BOLD;
+	game->player.speed = 0.1;
+}
+
+int		game_exit(t_game *param)
+{
+	param = (t_game*)param;
+//	system("leaks -quiet wolf3d");
+
+	exit(EXIT_SUCCESS);
+	return (1);
 }
 
 void	die(int reason)
