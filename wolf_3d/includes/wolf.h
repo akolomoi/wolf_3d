@@ -21,10 +21,11 @@
 # include <time.h>
 # include "../libft/libft.h"
 
-# define W_WIDTH	800
-# define W_HEIGHT	600
+# define W_WIDTH	1000
+# define W_HEIGHT	800
 
-# define MAP_SIZE	256	//256
+# define MAP_SIZE	1024
+# define TEX_SIZE	64
 
 //TODO: cleanup
 
@@ -56,35 +57,44 @@ typedef enum	e_tiles
 	T_TOTAL
 }				t_tiles;
 
-typedef enum	e_c_tiles
+typedef enum	e_modes
 {
-    C_EMPTY,
-    C_SOLID_1 = 0xff,
-    C_SOLID_2 = 0xff00,
-    C_SOLID_3 = 0xff0000,
-    C_FRAGILE_1 = 0xa0a,
-    C_FRAGILE_2 = 0xa0a0a,
-    C_FRAGILE_3 = 0xa0,
-    C_MAP_EDGE = 0x2cb288,
-    C_DOORWAY = 0x235476
-}				t_c_tiles;
+	M_BOLD,
+	M_SEPERATED,
+	M_TEXTURED,
+	M_TOTAL
+}				t_modes;
 
 typedef struct	s_dda
 {
-	double		sdx;
-	double		ddx;
-	double		sdy;
-	double		ddy;
-	double		step_x;
-	double		step_y;
-	double		map_x;
-	double		map_y;
+	double		x_cam;
+	double		x_rp;
+	double		y_rp;
+	double		x_rd;
+	double		y_rd;
+	int			x_m;
+	int			y_m;
+	double		wd;
+	double		x_sd;
+	double		y_sd;
+	double		x_dd;
+	double		y_dd;
+	int			x_st;
+	int			y_st;
+	int			side;
+	int			hit;
+	int			color;
+	int			lh;
+	int			start;
+	int			end;
+	int			tv;
 }				t_dda;
 
 typedef struct	s_player
 {
 	int			spawn_x;
 	int			spawn_y;
+	int			mode;
 	double		pos_x;
 	double		pos_y;
 	double		dir_x;
@@ -92,13 +102,8 @@ typedef struct	s_player
 	double		plane_x;
 	double		plane_y;
 	double      camera;
+	double		speed;
 }				t_player;
-
-typedef struct  s_mouse
-{
-    int         last_x;
-    int         last_y;
-}               t_mouse;
 
 typedef struct  s_keys
 {
@@ -106,20 +111,18 @@ typedef struct  s_keys
     int         move_backwards;
     int         rotate_left;
     int         rotate_right;
-    int         sprint;
 }               t_keys;
 
 typedef struct	s_game
 {
 	t_player	player;
 	t_keys      status;
-	t_mouse     mouse;
     void		*mlx;
     void		*win;
     void		*img;
     char		*img_adr;
     int         map[MAP_SIZE][MAP_SIZE];
-	//int		textures[64][64][64];
+	void		*textures;
 }				t_game;
 
 void			die(int reason);
@@ -128,7 +131,7 @@ void			warn(int reason);
 int				get_map(t_game *game, char *name);
 int				create_window(t_game *window);
 void            init_player(t_game *game);
-void            draw_vertical_line(t_game *game, int x, double d, int tile_val);
+void        draw_vertical_line(t_game *game, t_dda a, int *prev_color, int x);
 void            draw_game(t_game *game);
 void              draw_vl(t_game *game, int x, int start, int end, int tile_val);
 void			start_game(t_game *game);
@@ -136,6 +139,9 @@ void			start_game(t_game *game);
 int     hook(t_game *game);
 int     key_release(int k, t_game *game);
 int     key_press(int k, t_game *game);
+void	load_textures(t_game *game);
+
+int		go_textured(t_game *game, t_dda a, int x, int y);
 
 int				game_keyboard(int k, t_game *game);
 int				game_exit(t_game *param);

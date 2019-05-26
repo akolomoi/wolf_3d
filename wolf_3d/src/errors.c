@@ -13,14 +13,14 @@
 #include "../includes/wolf.h"
 #include <libc.h>
 
-void    init_player(t_game *game)
+void	init_player(t_game *game)
 {
-    game->player.pos_x = game->player.spawn_x + 0.5;
-    game->player.pos_y = game->player.spawn_y + 0.5;
-    game->player.dir_x = -1;
-    game->player.dir_y = 0;
-    game->player.plane_x = 0;
-    game->player.plane_y = 0.66;
+	game->player.pos_x = game->player.spawn_x + 0.5;
+	game->player.pos_y = game->player.spawn_y + 0.5;
+	game->player.dir_x = -1;
+	game->player.dir_y = 0;
+	game->player.plane_x = 0;
+	game->player.plane_y = 0.66;
 	game->player.mode = M_BOLD;
 	game->player.speed = 0.1;
 }
@@ -28,8 +28,7 @@ void    init_player(t_game *game)
 int		game_exit(t_game *param)
 {
 	param = (t_game*)param;
-//	system("leaks -quiet wolf3d");
-
+	system("leaks -quiet wolf3d");
 	exit(EXIT_SUCCESS);
 	return (1);
 }

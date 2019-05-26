@@ -1,4 +1,4 @@
-# Install script for directory: /Users/akolomoi/Desktop/wolf_3d/wolf_3d/src
+# Install script for directory: /Users/akolomoi/Desktop/tired/wolf_3d/src
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

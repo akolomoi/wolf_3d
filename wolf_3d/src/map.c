@@ -57,9 +57,9 @@ static int	parse(const int fd, t_game *game, int j, int *player)
 			else
 			{
 				if (!ft_isdigit(buf[0]))
-					return(UNKNOWN_SYMBOLS);
+					return (UNKNOWN_SYMBOLS);
 				if (i >= MAP_SIZE - 2 || j >= MAP_SIZE - 2)
-					return(BIG_MAP);
+					return (BIG_MAP);
 				game->map[j][i++] = buf[0] - '0';
 				if ((buf[0] - '0') == PLAYER)
 					init_player_pos(player, game, i - 1, j);
@@ -74,8 +74,8 @@ static int	set_spawn(t_game *game, int i, int j)
 		while (++j < MAP_SIZE)
 			if (game->map[i][j] == 0)
 			{
-                game->player.spawn_x = j;
-                game->player.spawn_y = i;
+				game->player.spawn_x = j;
+				game->player.spawn_y = i;
 				return (0);
 			}
 	return (1);
@@ -95,7 +95,7 @@ int			get_map(t_game *game, char *name)
 		die(error);
 	if (player < 1)
 	{
-		warn(SPAWNPOINT_NOT_SET);	
+		warn(SPAWNPOINT_NOT_SET);
 		if (set_spawn(game, -1, -1))
 			die(NOT_ENOUGH_SPACE);
 	}

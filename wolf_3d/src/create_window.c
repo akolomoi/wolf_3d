@@ -15,14 +15,10 @@
 
 int		create_window(t_game *window)
 {
-	int		tmp;
-
-
-	tmp = 32;
 	if (!(window->mlx = mlx_init()) ||
 	!(window->win = mlx_new_window(window->mlx, W_WIDTH, W_HEIGHT,
 	"Wolf3d by akolomoi")) ||
 	!(window->img = mlx_new_image(window->mlx, W_WIDTH, W_HEIGHT)))
-		return(0);
+		return (0);
 	return (1);
 }

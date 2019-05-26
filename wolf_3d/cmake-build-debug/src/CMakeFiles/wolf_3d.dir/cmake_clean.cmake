@@ -6,6 +6,7 @@ file(REMOVE_RECURSE
   "CMakeFiles/wolf_3d.dir/ray.c.o"
   "CMakeFiles/wolf_3d.dir/wolf_3d.c.o"
   "CMakeFiles/wolf_3d.dir/draw_funcs.c.o"
+  "CMakeFiles/wolf_3d.dir/tex.c.o"
   "wolf_3d.pdb"
   "wolf_3d"
 )

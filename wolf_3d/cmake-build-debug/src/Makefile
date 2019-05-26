@@ -48,10 +48,10 @@ RM = /Applications/CLion.app/Contents/bin/cmake/mac/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /Users/akolomoi/Desktop/wolf_3d/wolf_3d
+CMAKE_SOURCE_DIR = /Users/akolomoi/Desktop/tired/wolf_3d
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug
+CMAKE_BINARY_DIR = /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -80,14 +80,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug/CMakeFiles /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug/src/CMakeFiles/progress.marks
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/all
-	$(CMAKE_COMMAND) -E cmake_progress_start /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug/CMakeFiles 0
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/CMakeFiles /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/src/CMakeFiles/progress.marks
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/clean
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/clean
 .PHONY : clean
 
 # The main clean target
@@ -97,22 +97,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 src/CMakeFiles/wolf_3d.dir/rule:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/wolf_3d.dir/rule
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f CMakeFiles/Makefile2 src/CMakeFiles/wolf_3d.dir/rule
 .PHONY : src/CMakeFiles/wolf_3d.dir/rule
 
 # Convenience name for target.
@@ -122,7 +122,7 @@ wolf_3d: src/CMakeFiles/wolf_3d.dir/rule
 
 # fast build rule for target.
 wolf_3d/fast:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/build
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/build
 .PHONY : wolf_3d/fast
 
 create_window.o: create_window.c.o
@@ -131,7 +131,7 @@ create_window.o: create_window.c.o
 
 # target to build an object file
 create_window.c.o:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/create_window.c.o
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/create_window.c.o
 .PHONY : create_window.c.o
 
 create_window.i: create_window.c.i
@@ -140,7 +140,7 @@ create_window.i: create_window.c.i
 
 # target to preprocess a source file
 create_window.c.i:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/create_window.c.i
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/create_window.c.i
 .PHONY : create_window.c.i
 
 create_window.s: create_window.c.s
@@ -149,7 +149,7 @@ create_window.s: create_window.c.s
 
 # target to generate assembly for a file
 create_window.c.s:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/create_window.c.s
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/create_window.c.s
 .PHONY : create_window.c.s
 
 draw_funcs.o: draw_funcs.c.o
@@ -158,7 +158,7 @@ draw_funcs.o: draw_funcs.c.o
 
 # target to build an object file
 draw_funcs.c.o:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/draw_funcs.c.o
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/draw_funcs.c.o
 .PHONY : draw_funcs.c.o
 
 draw_funcs.i: draw_funcs.c.i
@@ -167,7 +167,7 @@ draw_funcs.i: draw_funcs.c.i
 
 # target to preprocess a source file
 draw_funcs.c.i:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/draw_funcs.c.i
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/draw_funcs.c.i
 .PHONY : draw_funcs.c.i
 
 draw_funcs.s: draw_funcs.c.s
@@ -176,7 +176,7 @@ draw_funcs.s: draw_funcs.c.s
 
 # target to generate assembly for a file
 draw_funcs.c.s:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/draw_funcs.c.s
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/draw_funcs.c.s
 .PHONY : draw_funcs.c.s
 
 errors.o: errors.c.o
@@ -185,7 +185,7 @@ errors.o: errors.c.o
 
 # target to build an object file
 errors.c.o:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/errors.c.o
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/errors.c.o
 .PHONY : errors.c.o
 
 errors.i: errors.c.i
@@ -194,7 +194,7 @@ errors.i: errors.c.i
 
 # target to preprocess a source file
 errors.c.i:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/errors.c.i
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/errors.c.i
 .PHONY : errors.c.i
 
 errors.s: errors.c.s
@@ -203,7 +203,7 @@ errors.s: errors.c.s
 
 # target to generate assembly for a file
 errors.c.s:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/errors.c.s
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/errors.c.s
 .PHONY : errors.c.s
 
 events.o: events.c.o
@@ -212,7 +212,7 @@ events.o: events.c.o
 
 # target to build an object file
 events.c.o:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/events.c.o
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/events.c.o
 .PHONY : events.c.o
 
 events.i: events.c.i
@@ -221,7 +221,7 @@ events.i: events.c.i
 
 # target to preprocess a source file
 events.c.i:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/events.c.i
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/events.c.i
 .PHONY : events.c.i
 
 events.s: events.c.s
@@ -230,7 +230,7 @@ events.s: events.c.s
 
 # target to generate assembly for a file
 events.c.s:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/events.c.s
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/events.c.s
 .PHONY : events.c.s
 
 map.o: map.c.o
@@ -239,7 +239,7 @@ map.o: map.c.o
 
 # target to build an object file
 map.c.o:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/map.c.o
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/map.c.o
 .PHONY : map.c.o
 
 map.i: map.c.i
@@ -248,7 +248,7 @@ map.i: map.c.i
 
 # target to preprocess a source file
 map.c.i:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/map.c.i
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/map.c.i
 .PHONY : map.c.i
 
 map.s: map.c.s
@@ -257,7 +257,7 @@ map.s: map.c.s
 
 # target to generate assembly for a file
 map.c.s:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/map.c.s
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/map.c.s
 .PHONY : map.c.s
 
 ray.o: ray.c.o
@@ -266,7 +266,7 @@ ray.o: ray.c.o
 
 # target to build an object file
 ray.c.o:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/ray.c.o
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/ray.c.o
 .PHONY : ray.c.o
 
 ray.i: ray.c.i
@@ -275,7 +275,7 @@ ray.i: ray.c.i
 
 # target to preprocess a source file
 ray.c.i:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/ray.c.i
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/ray.c.i
 .PHONY : ray.c.i
 
 ray.s: ray.c.s
@@ -284,8 +284,35 @@ ray.s: ray.c.s
 
 # target to generate assembly for a file
 ray.c.s:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/ray.c.s
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/ray.c.s
 .PHONY : ray.c.s
+
+tex.o: tex.c.o
+
+.PHONY : tex.o
+
+# target to build an object file
+tex.c.o:
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/tex.c.o
+.PHONY : tex.c.o
+
+tex.i: tex.c.i
+
+.PHONY : tex.i
+
+# target to preprocess a source file
+tex.c.i:
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/tex.c.i
+.PHONY : tex.c.i
+
+tex.s: tex.c.s
+
+.PHONY : tex.s
+
+# target to generate assembly for a file
+tex.c.s:
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/tex.c.s
+.PHONY : tex.c.s
 
 wolf_3d.o: wolf_3d.c.o
 
@@ -293,7 +320,7 @@ wolf_3d.o: wolf_3d.c.o
 
 # target to build an object file
 wolf_3d.c.o:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/wolf_3d.c.o
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/wolf_3d.c.o
 .PHONY : wolf_3d.c.o
 
 wolf_3d.i: wolf_3d.c.i
@@ -302,7 +329,7 @@ wolf_3d.i: wolf_3d.c.i
 
 # target to preprocess a source file
 wolf_3d.c.i:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/wolf_3d.c.i
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/wolf_3d.c.i
 .PHONY : wolf_3d.c.i
 
 wolf_3d.s: wolf_3d.c.s
@@ -311,7 +338,7 @@ wolf_3d.s: wolf_3d.c.s
 
 # target to generate assembly for a file
 wolf_3d.c.s:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/wolf_3d.c.s
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(MAKE) -f src/CMakeFiles/wolf_3d.dir/build.make src/CMakeFiles/wolf_3d.dir/wolf_3d.c.s
 .PHONY : wolf_3d.c.s
 
 # Help Target
@@ -341,6 +368,9 @@ help:
 	@echo "... ray.o"
 	@echo "... ray.i"
 	@echo "... ray.s"
+	@echo "... tex.o"
+	@echo "... tex.i"
+	@echo "... tex.s"
 	@echo "... wolf_3d.o"
 	@echo "... wolf_3d.i"
 	@echo "... wolf_3d.s"
@@ -355,6 +385,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /Users/akolomoi/Desktop/wolf_3d/wolf_3d/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
+	cd /Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 0
 .PHONY : cmake_check_build_system
 
