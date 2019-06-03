@@ -35,7 +35,7 @@ void	load_textures(t_game *game)
 
 	i = TEX_SIZE;
 	j = TEX_SIZE;
-	game->try2 = mlx_xpm_file_to_image(game->mlx, "../textures/stone.bmp", &i, &j);
+	game->try2 = mlx_xpm_file_to_image(game->mlx, "textures/Bricks.xpm", &i, &j);
 	i = -1;
 	int c = 0x111111 / 48;
 	int	k = 0;
@@ -64,8 +64,12 @@ int		init_tex(t_game *game, t_dda *a)
 int		go_textured(t_game *game, t_dda a, int y)
 {
 	int smh;
+	int k;
 
 	smh = (y << 9) - (W_HEIGHT << 8) + (a.lh << 8);
 	smh = ((smh * TEX_SIZE) / a.lh) >> 9;
-	return (fade(game->textures[a.cx][smh], a.wd));
+	k = 32;
+	//return (fade(game->textures[a.cx][smh], a.wd));
+	game->trd = mlx_get_data_addr(game->try2, &k, &k, &k);
+	return (fade(*(int*)(game->trd + sizeof(int) * (a.cx + smh * TEX_SIZE)), a.wd));
 }

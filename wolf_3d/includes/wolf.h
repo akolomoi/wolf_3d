@@ -126,6 +126,7 @@ typedef struct	s_game
     int         map[MAP_SIZE][MAP_SIZE];
 	int			textures[TEX_SIZE][TEX_SIZE];
 	void		*try2;
+	char 		*trd;
 }				t_game;
 
 void			die(int reason);
