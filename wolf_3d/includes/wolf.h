@@ -88,6 +88,8 @@ typedef struct	s_dda
 	int			start;
 	int			end;
 	int			tv;
+	double		wx;
+	int			cx;
 }				t_dda;
 
 typedef struct	s_player
@@ -122,7 +124,8 @@ typedef struct	s_game
     void		*img;
     char		*img_adr;
     int         map[MAP_SIZE][MAP_SIZE];
-	void		*textures;
+	int			textures[TEX_SIZE][TEX_SIZE];
+	void		*try2;
 }				t_game;
 
 void			die(int reason);
@@ -140,9 +143,12 @@ int     hook(t_game *game);
 int     key_release(int k, t_game *game);
 int     key_press(int k, t_game *game);
 void	load_textures(t_game *game);
+int	fade(int color, double dist);
 
-int		go_textured(t_game *game, t_dda a, int x, int y);
 
+int		init_tex(t_game *game, t_dda *a);
+
+int		go_textured(t_game *game, t_dda a, int y);
 int				game_keyboard(int k, t_game *game);
 int				game_exit(t_game *param);
 

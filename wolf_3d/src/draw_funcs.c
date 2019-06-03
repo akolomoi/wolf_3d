@@ -13,7 +13,7 @@
 #include "../includes/wolf.h"
 #include <libc.h>
 
-static void	put_pixel(t_game *game, int x, int y, int c)
+void	put_pixel(t_game *game, int x, int y, int c)
 {
 	int		tmp;
 
@@ -22,7 +22,7 @@ static void	put_pixel(t_game *game, int x, int y, int c)
 	*(int*)(game->img_adr + sizeof(int) * (x + y * W_WIDTH)) = c;
 }
 
-static int	fade(int color, double dist)
+int	fade(int color, double dist)
 {
 	uint8_t		r;
 	uint8_t		g;
@@ -69,11 +69,13 @@ void		draw_vertical_line(t_game *game, t_dda a, int *prev_color, int x)
 		a.color = get_col(a.tv);
 	while (++i < a.start)
 		put_pixel(game, x, i, 0xE0FFFF);
+	if (game->player.mode == M_TEXTURED)
+		init_tex(game, &a);
 	while (++a.start < a.end)
 	{
 		if (game->player.mode == M_TEXTURED)
 		{
-			put_pixel(game, x, a.start, (go_textured(game, a, x, a.start)));
+			put_pixel(game, x, a.start, (go_textured(game, a, a.start)));
 			continue ;
 		}
 		put_pixel(game, x, a.start, (*prev_color == a.color

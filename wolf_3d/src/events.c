@@ -50,7 +50,7 @@ int			key_release(int k, t_game *game)
 
 static void	rotate(t_game *game, double x_od, double x_op)
 {
-	if (game->status.rotate_left)
+	if (game->status.rotate_left && !game->status.rotate_right)
 	{
 		game->player.dir_x = game->player.dir_x * cos(0.05)
 		- game->player.dir_y * sin(0.05);
@@ -61,7 +61,7 @@ static void	rotate(t_game *game, double x_od, double x_op)
 		game->player.plane_y = x_op * sin(0.05)
 		+ game->player.plane_y * cos(0.05);
 	}
-	else if (game->status.rotate_right)
+	else if (game->status.rotate_right && !game->status.rotate_left)
 	{
 		game->player.dir_x = game->player.dir_x * cos(-0.05)
 		- game->player.dir_y * sin(-0.05);
@@ -76,7 +76,7 @@ static void	rotate(t_game *game, double x_od, double x_op)
 
 static void	move(t_game *game)
 {
-	if (game->status.move_forwards)
+	if (game->status.move_forwards && !game->status.move_backwards)
 	{
 		game->player.pos_x += game->player.dir_x * game->player.speed;
 		game->player.pos_y += game->player.dir_y * game->player.speed;
@@ -86,7 +86,7 @@ static void	move(t_game *game)
 			game->player.pos_y -= game->player.dir_y * game->player.speed;
 		}
 	}
-	else if (game->status.move_backwards)
+	else if (game->status.move_backwards && !game->status.move_forwards)
 	{
 		game->player.pos_x -= game->player.dir_x * game->player.speed;
 		game->player.pos_y -= game->player.dir_y * game->player.speed;
