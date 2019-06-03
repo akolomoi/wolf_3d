@@ -67,6 +67,5 @@ int		go_textured(t_game *game, t_dda a, int y)
 
 	smh = (y << 9) - (W_HEIGHT << 8) + (a.lh << 8);
 	smh = ((smh * TEX_SIZE) / a.lh) >> 9;
-	//return (fade(game->textures[a.cx][smh], a.wd));
-	return (fade(*(int*)(game->try2 + sizeof(int)*(a.cx + smh * TEX_SIZE)), a.wd));
+	return (fade(game->textures[a.cx][smh], a.wd));
 }
