@@ -13,7 +13,7 @@
 #include "../includes/wolf.h"
 #include <libc.h>
 
-void	put_pixel(t_game *game, int x, int y, int c)
+void		put_pixel(t_game *game, int x, int y, int c)
 {
 	int		tmp;
 
@@ -22,7 +22,7 @@ void	put_pixel(t_game *game, int x, int y, int c)
 	*(int*)(game->img_adr + sizeof(int) * (x + y * W_WIDTH)) = c;
 }
 
-int	fade(int color, double dist)
+int			fade(int color, double dist)
 {
 	uint8_t		r;
 	uint8_t		g;
@@ -30,10 +30,10 @@ int	fade(int color, double dist)
 
 	if (dist > 25)
 		dist = 25;
-	b = color >> 16;
+	r = color >> 16;
 	g = color >> 8;
-	r = color;
-	dist /= 25.0;
+	b = color;
+	dist /= 40.0;
 	b -= b * dist;
 	g -= g * dist;
 	r -= r * dist;
@@ -82,6 +82,6 @@ void		draw_vertical_line(t_game *game, t_dda a, int *prev_color, int x)
 		? fade(a.color, a.wd) : 0x0));
 	}
 	while (++a.start < W_HEIGHT)
-		put_pixel(game, x, a.start, 0xDEB887);
+		put_pixel(game, x, a.start, 0xDEB887 + 0.1 * (a.start - a.end));
 	*prev_color = a.color;
 }

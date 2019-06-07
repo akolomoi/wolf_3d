@@ -11,7 +11,7 @@ SRCNAME =	create_window.c \
 
 SRC = $(addprefix src/, $(SRCNAME))
 OBJ = $(SRC:.c=.o)
-FLAGS = -l mlx -framework OpenGL -framework AppKit
+FLAGS = -Wall -Werror -Wextra -l mlx -framework OpenGL -framework AppKit
 HDIR = includes
 LFT = libft/libft.a
 

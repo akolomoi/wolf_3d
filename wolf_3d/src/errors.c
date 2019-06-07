@@ -28,7 +28,6 @@ void	init_player(t_game *game)
 int		game_exit(t_game *param)
 {
 	param = (t_game*)param;
-	system("leaks -quiet wolf3d");
 	exit(EXIT_SUCCESS);
 	return (1);
 }

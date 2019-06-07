@@ -27,8 +27,6 @@
 # define MAP_SIZE	1024
 # define TEX_SIZE	64
 
-//TODO: cleanup
-
 typedef enum	e_errors
 {
 	MLX_FAILED = 1,
@@ -103,54 +101,54 @@ typedef struct	s_player
 	double		dir_y;
 	double		plane_x;
 	double		plane_y;
-	double      camera;
 	double		speed;
 }				t_player;
 
-typedef struct  s_keys
+typedef struct	s_keys
 {
-    int         move_forwards;
-    int         move_backwards;
-    int         rotate_left;
-    int         rotate_right;
-}               t_keys;
+	int			move_forwards;
+	int			move_backwards;
+	int			rotate_left;
+	int			rotate_right;
+}				t_keys;
+
+typedef struct	s_tex
+{
+	void		*img;
+	char		*adr;
+}				t_tex;
 
 typedef struct	s_game
 {
 	t_player	player;
-	t_keys      status;
-    void		*mlx;
-    void		*win;
-    void		*img;
-    char		*img_adr;
-    int         map[MAP_SIZE][MAP_SIZE];
-	int			textures[TEX_SIZE][TEX_SIZE];
-	void		*try2;
-	char 		*trd;
+	t_keys		status;
+	void		*mlx;
+	void		*win;
+	void		*img;
+	char		*img_adr;
+	int			map[MAP_SIZE][MAP_SIZE];
+	t_tex		tex[T_TOTAL];
 }				t_game;
 
 void			die(int reason);
 void			warn(int reason);
 
-int				get_map(t_game *game, char *name);
 int				create_window(t_game *window);
-void            init_player(t_game *game);
-void        draw_vertical_line(t_game *game, t_dda a, int *prev_color, int x);
-void            draw_game(t_game *game);
-void              draw_vl(t_game *game, int x, int start, int end, int tile_val);
-void			start_game(t_game *game);
+int				get_map(t_game *game, char *name);
+void			init_player(t_game *game);
 
-int     hook(t_game *game);
-int     key_release(int k, t_game *game);
-int     key_press(int k, t_game *game);
-void	load_textures(t_game *game);
-int	fade(int color, double dist);
+int				hook(t_game *game);
+int				key_release(int k, t_game *game);
+int				key_press(int k, t_game *game);
 
+void			load_textures(t_game *game);
+int				init_tex(t_game *game, t_dda *a);
+int				go_textured(t_game *game, t_dda a, int y);
+int				fade(int color, double dist);
 
-int		init_tex(t_game *game, t_dda *a);
+void			draw_vertical_line(t_game *game, t_dda a, int *prev_c, int x);
+void			draw_game(t_game *game);
 
-int		go_textured(t_game *game, t_dda a, int y);
-int				game_keyboard(int k, t_game *game);
 int				game_exit(t_game *param);
 
 #endif
