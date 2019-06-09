@@ -24,7 +24,8 @@
 # define W_WIDTH	1000
 # define W_HEIGHT	800
 
-# define MAP_SIZE	1024
+# define oMAP_SIZE	1024
+#define  MAP_SIZE 	game->ms
 # define TEX_SIZE	64
 
 typedef enum	e_errors
@@ -126,7 +127,9 @@ typedef struct	s_game
 	void		*win;
 	void		*img;
 	char		*img_adr;
-	int			map[MAP_SIZE][MAP_SIZE];
+	int 		**map;
+	int 		ms;
+	int			omap[oMAP_SIZE][oMAP_SIZE];
 	t_tex		tex[T_TOTAL];
 }				t_game;
 
@@ -135,6 +138,7 @@ void			warn(int reason);
 
 int				create_window(t_game *window);
 int				get_map(t_game *game, char *name);
+int				set_spawn(t_game *game, int i, int j);
 void			init_player(t_game *game);
 
 int				hook(t_game *game);

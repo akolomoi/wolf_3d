@@ -17,7 +17,9 @@ int		main(int ac, char **av)
 {
 	t_game	game;
 
-	if (ac != 2)
+	if (ac > 2)
+		die(TOO_MANY_PARAMS);
+	if (ac < 2)
 		die(INVALID_PARAMS);
 	if (!create_window(&game))
 		die(MLX_FAILED);
