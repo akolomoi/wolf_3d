@@ -12,7 +12,6 @@
 
 #include "../includes/wolf.h"
 #include "../includes/keys.h"
-#include <libc.h>
 
 int			key_press(int k, t_game *game)
 {

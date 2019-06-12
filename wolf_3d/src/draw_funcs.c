@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
-#include <libc.h>
 
 void		put_pixel(t_game *game, int x, int y, int c)
 {

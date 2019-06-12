@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
-#include <libc.h>
 
 static t_dda	cycle(t_game *game, int x)
 {

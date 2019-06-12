@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
-#include <libc.h>
 
 void	init_player(t_game *game)
 {
@@ -28,7 +27,6 @@ void	init_player(t_game *game)
 int		game_exit(t_game *param)
 {
 	param = (t_game*)param;
-	system("leaks -quiet wolf3d");
 	exit(EXIT_SUCCESS);
 	return (1);
 }
@@ -51,7 +49,6 @@ void	die(int reason)
 		ft_putendl("Map contains bad characters.");
 	else if (reason == NOT_ENOUGH_SPACE)
 		ft_putendl("Spawnpoint can not be set.");
-	system("leaks -quiet wolf3d");
 	exit(1);
 }
 

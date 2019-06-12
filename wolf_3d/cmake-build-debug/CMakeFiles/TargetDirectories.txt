@@ -1,5 +1,0 @@
-/Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/src/CMakeFiles/rebuild_cache.dir
-/Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/src/CMakeFiles/edit_cache.dir
-/Users/akolomoi/Desktop/tired/wolf_3d/cmake-build-debug/src/CMakeFiles/wolf_3d.dir

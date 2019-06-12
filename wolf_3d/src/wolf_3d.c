@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
-#include <libc.h>
 
 int		main(int ac, char **av)
 {

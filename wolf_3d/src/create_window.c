@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
-#include <libc.h>
 
 int		create_window(t_game *window)
 {

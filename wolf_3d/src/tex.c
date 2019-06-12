@@ -11,7 +11,6 @@
 /* ************************************************************************** */
 
 #include "../includes/wolf.h"
-#include <libc.h>
 
 static void	lt2(t_game *game, int i, int j, int k)
 {
